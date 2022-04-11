@@ -1,0 +1,26 @@
+{
+  "extends": "google",
+  "rules": {
+    // Additional, per-project rules...
+    "indent": [
+      "error",
+      2
+    ],
+    "max-len": [
+      2,
+      {
+        "code": 150
+      }
+    ],
+    "require-jsdoc": 0,
+    "semi": [
+      "error",
+      "never"
+    ]
+  },
+  "parser": "@babel/eslint-parser",
+  "env": {
+    "es6": true
+  }
+}
+  

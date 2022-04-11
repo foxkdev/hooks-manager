@@ -1,0 +1,61 @@
+{
+  "name": "todo-api",
+  "version": "1.0.0",
+  "description": "To Do API",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "pretest": "npm run lint",
+    "test": "NODE_ENV=test jest --collectCoverage --silent --testPathPattern=/test/unit --maxWorkers=1 --forceExit",
+    "test:watch": "npm run lint && NODE_ENV=test jest --collectCoverage --silent --testPathPattern=/test/unit --watch --maxWorkers=1 --forceExit",
+    "test:integration": "NODE_ENV=test jest --silent --testPathPattern=/test/integration --maxWorkers=1 --forceExit",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/foxkdev/ddd-node-scaffold.git"
+  },
+  "author": "Carlos Lopez <foxkdev@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/foxkdev/ddd-node-scaffold/issues"
+  },
+  "homepage": "https://github.com/foxkdev/ddd-node-scaffold#readme",
+  "jest": {
+    "verbose": true,
+    "setupFiles": [
+      "<rootDir>/test/jestSetup.js"
+    ],
+    "roots": [
+      "<rootDir>",
+      "<rootDir>/test/"
+    ],
+    "collectCoverageFrom": [
+      "<rootDir>/application/**/*.js",
+      "<rootDir>/domain/**/*.js",
+      "<rootDir>/infra/**/*.js"
+    ]
+  },
+  "dependencies": {
+    "awilix": "^4.3.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.10.0",
+    "morgan": "^1.10.0",
+    "pg": "^8.5.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.5.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/eslint-parser": "^7.14.7",
+    "eslint": "^7.31.0",
+    "eslint-config-google": "^0.14.0",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.12",
+    "supertest": "^6.1.4"
+  }
+}
